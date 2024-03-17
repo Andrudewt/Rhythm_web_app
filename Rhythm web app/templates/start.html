@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block body %}
+<h2>{{ the_title }}</h2>
+
+<form action="/" method="post">
+    <p>Quantity:</p>
+    <button type="submit" name="button" value="1">1</button>
+    <button type="submit" name="button" value="2">2</button>
+    <button type="submit" name="button" value="3">3</button>
+    <button type="submit" name="button" value="4">4</button>
+</form>
+
+{% if flag %}
+<img src="{{ url_for('static',
+ filename='images/result/result.png')
+  }}" class="image" />
+{% endif %}
+
+{% if flag_3 %}
+<img src="{{ url_for('static',
+ filename='images/result/result_2.png')
+  }}" class="image" />
+{% endif %}
+
+{% endblock %}
+
