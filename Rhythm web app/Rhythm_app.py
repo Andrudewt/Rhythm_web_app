@@ -13,10 +13,14 @@ def get_pic_array(path):
             pictures.append(cv2.imread(os.path.join(path, filename), cv2.IMREAD_GRAYSCALE))
     return pictures
 
-def generate_phrase(pictures, nuber, name):
+def generate_phrase(pictures, number, name):
     """ horizontal image concatenation  """
-    result = cv2.hconcat(random.sample(pictures, (int(nuber))))
-    cv2.imwrite(img_path + f"result/{name}.png", result)
+
+    if number % 2:
+        pass
+    else:
+        result = cv2.hconcat(random.sample(pictures, number))
+        cv2.imwrite(img_path + f"result/{name}.png", result)
 
 
 
@@ -24,10 +28,9 @@ app = Flask(__name__)
 
 @app.route("/", methods=["POST", "GET"])
 def start():
-
     if request.method == "POST" and request.form["button"] in "123456789" :
-        number = request.form["button"]
-        if int(number) < 3:
+        number = int(request.form["button"])
+        if number < 3:
             pictures = get_pic_array(img_path)
             generate_phrase(pictures, number, "result")
             return render_template("start.html", the_title="Here your rhythm",
