@@ -6,6 +6,7 @@ import random
 img_path = r"static/images/"
 
 def get_pic_array(path):
+    """ collects the pictures from the folder into an array """
     pictures = []
     for filename in os.listdir(path):
         if filename.endswith('.png'):
@@ -13,6 +14,7 @@ def get_pic_array(path):
     return pictures
 
 def generate_phrase(pictures, nuber):
+    """ horizontal image concatenation  """
     return cv2.hconcat(random.sample(pictures, (int(nuber))))
 
 app = Flask(__name__)
