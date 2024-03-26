@@ -70,4 +70,16 @@ body {
   select {
     font-size:        125%;
   }
+  .image-container {
+  width: 100%;
+  max-width: 100%;
+  height: auto; /* Set a specific height for the container */
+  text-align: center; /* Optional: To center the image horizontally */
+  overflow: auto; /* Add scrollbars when the content overflows */
+  }
 
+  .resizable-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  }

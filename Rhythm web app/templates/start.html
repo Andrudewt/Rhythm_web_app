@@ -11,15 +11,19 @@
 </form>
 
 {% if flag %}
+<div class="image-container">
 <img src="{{ url_for('static',
  filename='images/result/result.png')
-  }}" class="image" />
+  }}" class="resizable-image" />
+</div>
 {% endif %}
 
 {% if flag_3 %}
+<div class="image-container">
 <img src="{{ url_for('static',
  filename='images/result/result_2.png')
   }}" class="resizable-image" />
+</div>
 
 
 {% endif %}
