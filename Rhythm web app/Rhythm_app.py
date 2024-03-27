@@ -9,8 +9,9 @@ def get_pic_array(path):
     pictures = []
     for filename in os.listdir(path):
         if filename.endswith('.png'):
-            pictures.append(cv2.imread(os.path.join(path, filename), cv2.IMREAD_GRAYSCALE))
+            pictures.append(cv2.imread(os.path.join(path, filename)))  # , cv2.IMREAD_GRAYSCALE
     return pictures
+
 
 def generate_phrase(pictures, number, name):
     """ horizontal image concatenation randomly
@@ -20,10 +21,12 @@ def generate_phrase(pictures, number, name):
         result = cv2.hconcat((result, extend_pic))
     cv2.imwrite(img_path + f"result/{name}.png", result)
 
+
 img_path = r"static/images/"
-extend_pic = cv2.imread(r"static/images/result/extend.png", cv2.IMREAD_GRAYSCALE)
+extend_pic = cv2.imread(r"static/images/result/extend.png")  # , cv2.IMREAD_GRAYSCALE
 
 app = Flask(__name__)
+
 
 @app.route("/", methods=["POST", "GET"])
 def start():
