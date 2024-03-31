@@ -1,0 +1,70 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "956160c4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import cv2\n",
+    "import matplotlib.pyplot as plt\n",
+    "import os\n",
+    "import numpy as np"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "a9e98ec7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def get_pic_array(path):\n",
+    "    pictures = []\n",
+    "    for filename in os.listdir(path):\n",
+    "        if filename.endswith('.png'):\n",
+    "            pictures.append(cv2.imread(os.path.join(path, filename), cv2.IMREAD_GRAYSCALE))\n",
+    "    return pictures\n",
+    "\n",
+    "path = r\"images/cv2/input/\"\n",
+    "\n",
+    "pic_arr = get_pic_array(path)\n",
+    "\n",
+    "for name, pic in enumerate(pic_arr):\n",
+    "    pic = cv2.resize(pic, (608, 249), interpolation = cv2.INTER_LINEAR)\n",
+    "    cv2.imwrite(f\"images/cv2/{str(name)}.png\", pic)\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a460a24c",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
