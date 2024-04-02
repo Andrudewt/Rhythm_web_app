@@ -1,5 +1,5 @@
 http://andudewt.pythonanywhere.com/
-
+## Melodic Rhythms 
 The app generates random rhythm phrases in random order and according to requested bars - 1, 2, 3, or 4.
 The goal is to practice all the 22 jazz chicle in various combinations.
 Applicable for all instruments
