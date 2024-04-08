@@ -1,4 +1,4 @@
-http://andudewt.pythonanywhere.com/
+Chek the app here http://andudewt.pythonanywhere.com/
 ## Melodic Rhythms 
 <p align="justify">
 The app generates random rhythm phrases in random order and according to requested bars - 1, 2, 3, or 4.
