@@ -33,6 +33,7 @@ phrase_2 = "Here your rhythm phrase"
 
 @app.route("/", methods=["POST", "GET"])
 def start():
+    """ returns html page """
     pictures = get_pic_array(img_path)
     if request.method == "POST" and request.form["button"] in "123456789":
         number = int(request.form["button"])
